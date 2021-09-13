@@ -1,19 +1,19 @@
 import React from 'react';
-import keplerGlReducer from 'kepler.gl/reducers';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { taskMiddleware } from 'react-palm/tasks';
-import { Provider, useDispatch } from "react-redux";
+// import keplerGlReducer from 'kepler.gl/reducers';
+// import { createStore, combineReducers, applyMiddleware } from 'redux';
+// import { taskMiddleware } from 'react-palm/tasks';
+import {  useDispatch } from "react-redux";
 import { KeplerGl } from "kepler.gl";
 import { addDataToMap } from "kepler.gl/actions";
 import useSwr from "swr";
-import { updateMap } from 'kepler.gl/actions';
+// import { updateMap } from 'kepler.gl/actions';
 // import mapboxgl from 'mapbox-gl';
-
+import "../Css/kepler.css"
 
 
 
 function KeplerMap() {
-  // Create a variable
+  // Create a variable 
   const dispatch = useDispatch();
 
   //Add data by using hook
@@ -36,17 +36,17 @@ function KeplerMap() {
 
 
   // this is a way to check is data is comming in consol 
-  // console.log(data);
+   console.log(data);
   // Main yeh chahta hun k jo bhe {data} main Data 
   // change ho to yahan bhe data change to us k lye main useEffect function from redux se use karun ga 
 
-  React.useEffect(() => {
+  React.useEffect((props) => {
     if (data) {
       dispatch(
         addDataToMap({
           datasets: {
             info: {
-              label: "COVID-19",
+              label: "Covid19",
               id: "covid19"
             },
             data

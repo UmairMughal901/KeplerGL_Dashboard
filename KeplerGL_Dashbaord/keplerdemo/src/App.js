@@ -2,7 +2,7 @@ import React from 'react';
 import keplerGlReducer from 'kepler.gl/reducers';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { taskMiddleware } from 'react-palm/tasks';
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import  KeplerMap    from "./Components/KeplerMap";
 import  Banner  from "./Components/Banner";
 
@@ -15,12 +15,13 @@ const reducer = combineReducers({
 const store = createStore(reducer, {}, applyMiddleware(taskMiddleware));
 
 
+
 function App() {
   return (
    
     <Provider store={store}>
       <Banner />
-      <KeplerMap />
+      <KeplerMap  />
      
     
     </Provider>
